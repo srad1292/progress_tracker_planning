@@ -1,0 +1,21 @@
+admin-
+POST    /admin/progress -> insert progress record
+        body: {goal: 1, amount: 20, sessionDate: '2021-02-23'}
+
+PUT     /admin/progress/:progress -> update progress record
+        body: {goal: 1, amount: 22, sessionDate: '2021-02-23'}
+
+DELETE  /admin/progress/:progress -> Delete progress record
+
+
+goal - 
+GET     /goal -> get list of goal options
+
+
+progress -
+GET     /progress/goal/:goal -> get all by type
+GET     /progress/goal/:goal?period='day' -> get grouped list of progress by period
+GET     /progress/goal/:goal/highest?period="day" -> get grouped list of progress filtered by highest sum
+GET     /progress/goal/:goal/lowest?period="day" -> get grouped list of progress filtered by lowest sum
+GET     /progress/goal/:goal/session/highest?period="day" -> get list of progress filtered by highest sum
+GET     /progress/goal/:goal/session/lowest?period="day" -> get list of progress filtered by lowest sum
